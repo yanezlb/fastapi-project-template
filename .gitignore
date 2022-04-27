@@ -1,1 +1,5 @@
 .env.local
+.env       
+config/__pycache__/*
+routes/__pycache__/*
+models/__pycache__/*
