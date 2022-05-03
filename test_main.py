@@ -5,6 +5,7 @@ from main import app
 from config.database import get_session
 from config.env import DATABASE_URL
 
+# TODO: add more functions to test other endpoints
 
 # def test_create_user():
 #         client = TestClient(app)  # 
