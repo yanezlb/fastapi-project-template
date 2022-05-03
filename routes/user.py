@@ -52,3 +52,7 @@ def delete_user(*, session: Session = Depends(get_session), user_id: int):
     session.delete(user)
     session.commit()
     return {"ok": True}
+
+@users.get(ROOT_DIR+"/user/test", tags=["Admin User"])
+def delete_user():
+    return {"ok": True}

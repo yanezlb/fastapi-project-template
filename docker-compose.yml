@@ -35,4 +35,6 @@ services:
     depends_on:
       - db
     restart: always
+    links:
+      - db:db
 
