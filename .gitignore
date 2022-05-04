@@ -1,5 +1,11 @@
+# Environment files
+.env
 .env.local
-.env       
+
+# Byte-compiled files
+__pycache__/*
 config/__pycache__/*
 routes/__pycache__/*
 models/__pycache__/*
+
+

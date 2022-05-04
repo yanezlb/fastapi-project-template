@@ -7,25 +7,24 @@ from config.env import DATABASE_URL
 
 # TODO: add more functions to test other endpoints
 
-# def test_create_user():
-#         client = TestClient(app)  # 
-
-#         response = client.post(  # 
-#             "localhost:8000/api/v1/users", json={ "username": "Luis Yanez", "password": "test" }
-#         )
-#         data = response.json()  # 
-
-#         assert response.status_code == 200  # 
-#         assert data["name"] == "Luis Yanez"  # 
-#         assert data["password"] == "test"  # 
-#         assert data["id"] is not None  # 
-
 def test_create_user():
+        client = TestClient(app)  # 
 
-    client = TestClient(app)
+        response = client.get(  # 
+            "/api/v1/users"
+        )
 
-    response = client.get(
-        "/api/v1/user/test"
-    )
+        data = response.json()  # 
 
-    assert response.status_code == 200
+        assert response.status_code == 200  # 
+        
+        
+# def test_create_user():
+
+#     client = TestClient(app)
+
+#     response = client.get(
+#         "/api/v1/user/test"
+#     )
+
+#     assert response.status_code == 200
