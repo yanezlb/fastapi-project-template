@@ -1,7 +1,6 @@
 version: "3.8"
 
 services:
-
   db:
     container_name: postgresql_db
     image: postgres
@@ -12,7 +11,9 @@ services:
       - POSTGRES_USER=${DB_USER}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
       - POSTGRES_DB=${DB_NAME}
-
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+      
   pgadmin:
     container_name: pgadmin
     image: dpage/pgadmin4
@@ -38,3 +39,5 @@ services:
     links:
       - db:db
 
+  volumes:
+    - postgres_data:

@@ -1,8 +1,7 @@
-import sys
-import os, sys
+import os, sys, databases
 
 from fastapi import FastAPI
-
+from starlette.config import Config
 from config.database import create_db_and_tables
 from config.env import VERSION, TITLE, ROOT_DIR
 from routes.user import users

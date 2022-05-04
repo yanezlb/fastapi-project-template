@@ -1,6 +1,11 @@
 import os
+from tokenize import String
+import databases
+from starlette.config import Config
 
-DATABASE_URL = os.environ["DATABASE_URL"]
-VERSION=os.environ["VERSION"]
-TITLE=os.environ["TITLE"]
-ROOT_DIR=os.environ["ROOT_DIR"]
+config = Config("../.env")
+
+DATABASE_URL = config("DATABASE_URL", cast=databases.DatabaseURL)
+VERSION = config("VERSION", cast=str, default="0.0.1")
+TITLE =  config("TITLE", cast=str, default="template")
+ROOT_DIR = config("ROOT_DIR", cast=str, default="/api/v1")
