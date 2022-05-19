@@ -5,6 +5,7 @@ from starlette.config import Config
 from sqlmodel import Field, Session, SQLModel, create_engine, select
 
 
+
 BASE_DIR = "/".join(os.path.dirname(os.path.abspath(__file__)).split("/")[:-1])
 load_dotenv(os.path.join(BASE_DIR, ".env"))
 sys.path.append(BASE_DIR)
